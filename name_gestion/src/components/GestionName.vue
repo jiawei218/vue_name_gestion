@@ -2,7 +2,8 @@
 <script setup>
 import { ref, reactive, computed, watch } from 'vue'
 
-const names = reactive(['Emil, Hans', 'Mustermann, Max', 'Tisch, Roman'])
+const names = reactive(['Emil, Hans', 'Mustermann, Max', 'Tisch, Roman',
+  'Alice, Brown','Egg, Green','Bob, Python'])
 const selected = ref('')
 const prefix = ref('')
 const first = ref('')
@@ -50,6 +51,7 @@ function hasValidInput() {
 
 <template>
   <div class="container">
+
     <div class="search-box">
       <input v-model="prefix" placeholder="Filter prefix" class="search-input">
     </div>
@@ -66,48 +68,57 @@ function hasValidInput() {
         </div>
       </div>
 
+      <div class="buttons">
+        <button class="btn" @click="create">Create</button>
+        <button class="btn" @click="update">Update</button>
+        <button class="btn" @click="del">Delete</button>
+      </div>
+
     </div>
 
-    <div class="buttons">
-      <button class="btn" @click="create">Create</button>
-      <button class="btn" @click="update">Update</button>
-      <button class="btn" @click="del">Delete</button>
-    </div>
+
 
   </div>
 </template>
 
 <style scoped>
-
-
 .search-box {
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
-
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.input-label {
-  font-weight: 500;
-  color: #495057;
+.search-input {
+  width: 200px;
 }
 
 select {
   float: left;
-  margin: 0 1em 1em 0;
-  width: 14em;
+  margin: 0 2px 2px 0;
+  width: 200px;
+  height: 120px;
+
 }
 
+.input-group {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+
+.buttons {
+  padding: 5px;
+  margin: 5px;
+}
 .btn {
-  background-color: palegreen;
+  background-color: lightgreen;
   color: black;
   border-radius: 8px;
-}
-
-button + button {
+  border-color: honeydew;
+  padding: 3px;
   margin-left: 5px;
 }
+
+
+
 </style>

@@ -4,57 +4,62 @@ import GestionName from "@/components/GestionName.vue";
 </script>
 
 <template>
+  <div class="app">
+    <header class="header-content">
+        <img alt="Vue logo" class="logo" src="./assets/logo.svg"  />
+        <h1 class="title">Name List</h1>
+    </header>
 
-<div class="header-content">
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="50" height="50" />
-    <h1 class="title">Name Gestion</h1>
-</div>
+    <div class="main">
+      <GestionName />
+    </div>
 
-  <div class="main">
-    <GestionName />
+    <footer class="footer">
+       <h1 class="welcome">Welcome to my first vue app !</h1>
+    </footer>
+
   </div>
-
-  <div class="footer">
-     <h1 class="welcome">Welcome to my first vue app !</h1>
-   </div>
-
 </template>
 
-<style scoped>
-
+<style >
+.app {
+  min-width: 40vw;
+}
+/* Header  */
 .header-content {
+  background-color: honeydew;
+  padding: 5px;
   display: flex;
-  justify-content: flex-end;  /* 元素靠右 */
-  align-items: center;        /* 垂直居中 */
-  gap: 20px;                  /* 元素间距 */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.title {
-  font-size: 30px;
-  color: #2c3e50;
-  margin: 0;
-}
-
-.main {
-  max-width: 800px;
-  padding: 0 20px;
-  display: flex;
-  justify-content: center;  /* 水平居中 */
   align-items: center;
+  gap: 20px;
+
 }
 
-.footer {
+/* Main */
+.main{
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
   display: flex;
-  justify-content: center;  /* 水平居中 */
-  align-items: center;      /* 垂直居中 */
-  height: 200px;
-
-}
-.welcome {
-  font-size: 15px;
-  color:gray;
 }
 
+/* Footer */
+.footer {
+  background: honeydew;
+  padding: 5px;
+  text-align: center;
+  font-size: 8px;
+  color: gray;
+}
+
+.title {
+  margin: 0;
+  font-size: 25px;
+  color: #2c3e50;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
 </style>
